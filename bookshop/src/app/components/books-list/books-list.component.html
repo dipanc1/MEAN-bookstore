@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Books List</h1>
+        </div>
+
+        <hr class="border border-success border-2 opacity-50">
+
+        <table class="table table-bordered border-success">
+            <thead>
+                <tr>
+                    <th scope="col">Sr. No.</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Description</th>
+                    <th class="text-center" scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let book of Books; let i = index">
+                    <th scope="row">{{i +1}}</th>
+                    <td>{{book.name}}</td>
+                    <td>{{book.price}}</td>
+                    <td>{{book.description}}</td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-warning mx-1" routerLink="/edit-book/{{book._id}}">Edit</button>
+                        <button class="btn btn-sm btn-danger mx-1" (click)="delete(book._id,i)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container my-5">
+    <div class="col-md-6">
+        <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input placeholder="Book's Name" type="text" class="form-control" id="name" formControlName="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="price" class="form-label">Price</label>
+              <input placeholder="Book's Price" type="text" class="form-control" id="price" formControlName="price" required>
+            </div>
+
+            <div class="form-group">
+              <label for="description" class="form-label">Description</label>
+              <textarea placeholder="Book's Description" class="form-control" id="description" formControlName="description" required cols="10" rows="4"></textarea>
+            </div>
+            
+            <button type="submit" class="mt-2 btn btn-success">Add Book</button>
+          </form>
+    </div>
+</div>
