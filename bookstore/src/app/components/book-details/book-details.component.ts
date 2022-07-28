@@ -22,14 +22,12 @@ export class BookDetailsComponent implements OnInit {
     this.crudApi.getBook(this.getId).subscribe(res => {
       this.updateForm.setValue({
         name: res['name'],
-        price: res['price'],
-        description: res['description']
+        rating: res['rating'],
       })
     });
     this.updateForm = this.formBuilder.group({
       name: [''],
-      price: [''],
-      description: ['']
+      rating: [''],
     })
   }
 

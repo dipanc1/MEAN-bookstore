@@ -7,7 +7,8 @@ import { Book } from './book';
   providedIn: 'root'
 })
 export class CrudService {
-  REST_API: string = "http://localhost:8000/api";
+  REST_API: string = "https://marleen-bookstore.herokuapp.com/api";
+  // REST_API: string = "http://localhost:8000/api";
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json')
   constructor(private httpClient: HttpClient) { }
 

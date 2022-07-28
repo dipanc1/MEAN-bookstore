@@ -1,0 +1,50 @@
+<div class="container my-5">
+  <div class="col-md-6">
+    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="name" class="form-label">Name</label>
+        <input placeholder="Book's Name" type="text" class="form-control" id="name" formControlName="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="rating" class="form-label">Rating</label>
+        <input placeholder="Rate the Book" type="text" class="form-control" id="rating" formControlName="rating" required>
+      </div>
+
+      <button type="submit" class="mt-2 btn btn-success">Add Book</button>
+    </form>
+  </div>
+
+  <div class="col-md-6 my-5">
+    <h1>Find a Book Online</h1>
+    <form [formGroup]="bookForm2" (ngSubmit)="getBookData()">
+
+      <div class="form-group">
+        <label for="name" class="form-label">Name</label>
+        <input placeholder="Book's Name" type="text" class="form-control" id="name" formControlName="name" required>
+      </div>
+
+      <button type="submit" class="mt-2 btn btn-success">Search</button>
+
+    </form>
+
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+
+      <div class="col my-3" *ngFor="let book of searchResults">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">{{book.name}}</h4>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title pricing-card-title">{{book.rating}}<small
+                  class="text-muted fw-light">/5</small></h5>
+              <img width="100px" src="{{book.cover}}" alt="cover">
+              <button (click)="addBook(book)" class="w-100 btn btn-lg btn-outline-success my-2">Select</button>
+            </div>
+          </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -6,12 +6,9 @@ let Book = new Schema({
     name: {
         type: String
     },
-    price: {
-        type: String
+    rating: {
+        type: Number
     },
-    description: {
-        type: String
-    }
 }, {
     collection: 'books'
 })
